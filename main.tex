@@ -1,0 +1,239 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% LaTeX book template                           %%
+%% Author:  Amber Jain (http://amberj.devio.us/) %%
+%% License: ISC license                          %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[a4paper,11pt]{book}
+\usepackage[margin=1.5in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Source: http://en.wikibooks.org/wiki/LaTeX/Hyperlinks %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage[english]{babel}
+\usepackage{amsthm}
+\usepackage{mathtools}
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
+
+
+\newcommand{\code}{\lstinputlisting}
+\newtheorem{prob}{Problem}
+\let\oldprob\prob
+\renewcommand{\prob}{\oldprob\indent\\}
+\newtheorem*{sol}{Solution}
+\let\oldsol\sol
+\renewcommand{\sol}{\oldsol\normalfont}
+\usepackage{listings}
+\usepackage{courier}
+\lstset{
+	basicstyle=\footnotesize\ttfamily, % Standardschrift
+	%numbers=left,               % Ort der Zeilennummern
+	numberstyle=\tiny,          % Stil der Zeilennummern
+	%stepnumber=2,               % Abstand zwischen den Zeilennummern
+	numbersep=5pt,              % Abstand der Nummern zum Text
+	tabsize=4,                  % Groesse von Tabs
+	extendedchars=true,         %
+	breaklines=true,            % Zeilen werden Umgebrochen
+	keywordstyle=\color{red},
+	frame=bt,         
+	%        keywordstyle=[1]\textbf,    % Stil der Keywords
+	%        keywordstyle=[2]\textbf,    %
+	%        keywordstyle=[3]\textbf,    %
+	%        keywordstyle=[4]\textbf,   \sqrt{\sqrt{}} %
+	stringstyle=\color{white}\ttfamily, % Farbe der String
+	showspaces=false,           % Leerzeichen anzeigen ?
+	showtabs=false,             % Tabs anzeigen ?
+	xleftmargin=17pt,
+	framexleftmargin=17pt,
+	framexrightmargin=5pt,
+	framexbottommargin=4pt,
+	%backgroundcolor=\color{lightgray},
+	showstringspaces=false      % Leerzeichen in Strings anzeigen ?        
+}
+\lstloadlanguages{% Check Dokumentation for further languages ...
+	%[Visual]Basic
+	%Pascal
+	C
+	%C++
+	%XML
+	%HTML
+	%Java
+}
+%\DeclareCaptionFont{blue}{\color{blue}} 
+
+%\captionsetup[lstlisting]{singlelinecheck=false, labelfont={blue}, textfont={blue}}
+\usepackage{caption}
+\DeclareCaptionFont{white}{\color{white}}
+\DeclareCaptionFormat{listing}{\colorbox[cmyk]{0.43, 0.35, 0.35,0.01}{\parbox{\textwidth}{\hspace{15pt}#1 #2 #3}}}
+\captionsetup[lstlisting]{format=listing,labelfont=white,textfont=white, singlelinecheck=false, margin=0pt, font={bf,footnotesize}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 'dedication' environment: To add a dedication paragraph at the start of book %
+% Source: http://www.tug.org/pipermail/texhax/2010-June/015184.html            %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newenvironment{dedication}
+{
+   \cleardoublepage
+   \thispagestyle{empty}
+   \vspace*{\stretch{1}}
+   \hfill\begin{minipage}[t]{0.66\textwidth}
+   \raggedright
+}
+{
+   \end{minipage}
+   \vspace*{\stretch{3}}
+   \clearpage
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Chapter quote at the start of chapter        %
+% Source: http://tex.stackexchange.com/a/53380 %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\makeatletter
+\renewcommand{\@chapapp}{}% Not necessary...
+\newenvironment{chapquote}[2][2em]
+  {\setlength{\@tempdima}{#1}%
+   \def\chapquote@author{#2}%
+   \parshape 1 \@tempdima \dimexpr\textwidth-2\@tempdima\relax%
+   \itshape}
+  {\par\normalfont\hfill--\ \chapquote@author\hspace*{\@tempdima}\par\bigskip}
+\makeatother
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% First page of book which contains 'stuff' like: %
+%  - Book title, subtitle                         %
+%  - Book author name                             %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Book's title and subtitle
+\title{\Huge \textbf{Euler Project} 
+%	 \footnote{The book contains spoilers and hints.} \\ \huge  Hints and solutions \footnote{Comments are welcome.}
+	 }
+% Author
+\author{\textsc{@GaZ3ll3}\thanks{\url{www.github.com/gaz3ll3}}}
+
+
+\begin{document}
+
+\frontmatter
+\maketitle
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Add a dedication paragraph to dedicate your book to someone %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\begin{dedication}
+
+%\end{dedication}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Auto-generated table of contents, list of figures and list of tables %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\tableofcontents
+%\listoffigures
+%\listoftables
+
+\mainmatter
+%%%%%%%%%%%%%%%%
+% NEW CHAPTER! %
+%%%%%%%%%%%%%%%%
+\input{lv1.tex}
+
+\chapter{LEVEL 2 @Problem 26 - 50}
+\section{Problem 026}
+\begin{prob}
+\end{prob}
+
+\chapter{LEVEL 3 @Problem 51 - 75}
+\section{Problem 051}
+\begin{prob}
+\end{prob}
+
+\chapter{LEVEL 4 @Problem 76 - 100}
+\section{Problem 076}
+\begin{prob}
+\end{prob}
+
+\chapter{LEVEL 5 @Problem 101 - 125}
+\section{Problem 101}
+\begin{prob}
+\end{prob}
+
+\chapter{LEVEL 6 @Problem 126 - 150}
+\section{Problem 126}
+\begin{prob}
+\end{prob}
+
+\chapter{LEVEL 7 @Problem 151 - 175}
+\section{Problem 051}
+\begin{prob}
+\end{prob}
+
+\chapter{LEVEL 8 @Problem 176 - 200}
+\section{Problem 051}
+\begin{prob}
+\end{prob}
+
+\chapter{LEVEL 9 @Problem 201 - 225}
+\section{Problem 051}
+\begin{prob}
+\end{prob}
+
+\chapter{LEVEL 10 @Problem 226 - 250}
+\section{Problem 051}
+\begin{prob}
+\end{prob}
+
+\chapter{LEVEL 11 @Problem 251 - 275}
+\section{Problem 051}
+\begin{prob}
+\end{prob}
+
+\chapter{LEVEL 12 @Problem 276 - 300}
+\section{Problem 051}
+\begin{prob}
+\end{prob}
+
+\chapter{LEVEL 13 @Problem 301 - 325}
+\section{Problem 301}
+\begin{prob}
+\end{prob}
+
+\chapter{LEVEL 14 @Problem 326 - 350}
+\section{Problem 326}
+\begin{prob}
+\end{prob}
+
+\chapter{LEVEL 15 @Problem 351 - 375}
+\section{Problem 351}
+\begin{prob}
+\end{prob}
+
+\chapter{LEVEL 16 @Problem 376 - 400}
+\section{Problem 051}
+\begin{prob}
+\end{prob}
+
+\chapter{LEVEL 17 @Problem 401 - 425}
+\section{Problem 401}
+\begin{prob}
+\end{prob}
+
+\chapter{LEVEL 18 @Problem 426 - 450}
+\section{Problem 426}
+\begin{prob}
+\end{prob}
+
+\chapter{LEVEL 19 @Problem 451 - 475}
+\section{Problem 451}
+\begin{prob}
+\end{prob}
+
+\chapter{LEVEL 19+ @Problem 475+}
+\section{Problem 476}
+\begin{prob}
+\end{prob}
+\end{document}
