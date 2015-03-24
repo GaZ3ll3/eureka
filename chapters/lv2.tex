@@ -93,7 +93,7 @@ Brute force, since the largest number will not exceed $5 \cdot 9 ^5$.
 \code{code/030.py}
 \end{sol}
 
-\section{Problem 031}
+\section{Problem 031 - Coin sums}
 \begin{prob}
 	\begin{figure}[htb!]
 		\begin{center}
@@ -104,9 +104,9 @@ Brute force, since the largest number will not exceed $5 \cdot 9 ^5$.
 
 \begin{sol}
 Consider the generating function 
-$$\dfrac{1}{ (1 - x)(1 - x^2)(1 - x^5)(1 - x^{10})(1 - x^{20})(1 - x^{50})(1 - x^{100})(1 - x^{200})}$$
-We simply need to find out the coefficient of $x^{200}$. To avoid long division, we can use 
-$$\dfrac{1 - x ^ {201}}{1 - x} \dfrac{1 - x ^ {202}}{1 - x^2} \dfrac{1 - x^{205}}{1 - x^5} \dfrac{1 - x ^ {210}}{1 - x ^{10}}\dfrac{1 - x^{220}}{1 - x^{20}}\dfrac{1 - x^{250}}{1 - x^{50}} \dfrac{1 - x^{300}}{1 - x^{100}}\dfrac{1 - x^{400}}{1 - x^{200}}$$
+$$\prod_{i}\dfrac{1}{1 - x^{n_i}}$$
+We simply need to find out the coefficient of $x^{200}$. To avoid long division and observe that $n_i \mid 200$, we can use 
+$$\prod_{i}\dfrac{1 - x ^ {200 + n_i}}{1 - x^{n_i}} $$
 instead, that will simply require multiplication of polynomials.
 \vspace{1cm}
 \code{code/031.py}
@@ -128,12 +128,12 @@ It is easy to show there are only two possible cases:
 For the first case, there are $630$ choices at most. For the second, there are $1260$ combinations.
 \code{code/032.py}
 \end{sol}
-
+\newpage
 \section{Problem 033}
 \begin{prob}
 	\begin{figure}[htb!]
 		\begin{center}
-			\includegraphics[scale = 0.4]{pic/026.png}
+			\includegraphics[scale = 0.4]{pic/033.png}
 		\end{center}
 	\end{figure}
 \end{prob}
