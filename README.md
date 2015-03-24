@@ -1,4 +1,4 @@
-Eureka
+Eureka [![PDF Status](https://www.sharelatex.com/github/repos/GaZ3ll3/eureka/builds/latest/badge.svg)](https://www.sharelatex.com/github/repos/GaZ3ll3/eureka/builds/latest/output.pdf)
 ====
 
 This repo stores 001 - 500+ source code for Euler project, including recent problems.
