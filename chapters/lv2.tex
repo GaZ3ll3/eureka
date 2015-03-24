@@ -129,7 +129,7 @@ For the first case, there are $630$ choices at most. For the second, there are $
 \code{code/032.py}
 \end{sol}
 \newpage
-\section{Problem 033}
+\section{Problem 033 - Digit cancelling fractions}
 \begin{prob}
 	\begin{figure}[htb!]
 		\begin{center}
@@ -137,14 +137,25 @@ For the first case, there are $630$ choices at most. For the second, there are $
 		\end{center}
 	\end{figure}
 \end{prob}
-\section{Problem 034}
+\begin{sol}
+\texttt{Python} provides \texttt{Fraction} to manipulate rational numbers. Here we take advantage of \texttt{Julia}'s \texttt{Rational} Type.
+\code{code/033.jl}
+\end{sol}
+\section{Problem 034 - Digit factorials}
 \begin{prob}
 	\begin{figure}[htb!]
 		\begin{center}
-			\includegraphics[scale = 0.4]{pic/026.png}
+			\includegraphics[scale = 0.4]{pic/034.png}
 		\end{center}
 	\end{figure}
 \end{prob}
+\begin{sol}
+Brute force. The upper bound can be determined by 
+$$9! \cdot n < 10^{n}$$
+which gives $n \le 7$ digits, the upper bound must be lower than $9! \cdot 7 = 2540160$. 
+\code{code/034.py}
+\end{sol}
+
 \section{Problem 035}
 \begin{prob}
 	\begin{figure}[htb!]
