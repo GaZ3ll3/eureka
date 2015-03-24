@@ -304,8 +304,10 @@ Brute force, check all numbers and their sum of divisors.
 	\end{figure}
 \end{prob}
 \begin{sol}
-
+Brute force, using \texttt{qsort}.
+\code{code/022.py}
 \end{sol}
+\newpage
 \section{Problem 023 - Non-abundant sums}
 \begin{prob}
 	\begin{figure}[htb!]
@@ -315,6 +317,8 @@ Brute force, check all numbers and their sum of divisors.
 	\end{figure}
 \end{prob}
 \begin{sol}
+Brute force. Nested loop to check whether a number can be written as a sum of two abundant number.
+\code{code/023.c}
 \end{sol}
 \section{Problem 024 - Lexicographic permutations}
 \begin{prob}
@@ -325,7 +329,10 @@ Brute force, check all numbers and their sum of divisors.
 	\end{figure}
 \end{prob}
 \begin{sol}
+Not necessary to call \texttt{next\_permutation} million times. 
+\code{code/024.py}
 \end{sol}
+\newpage
 \section{Problem 025 - 1000-digit Fibonacci number}
 \begin{prob}
 	\begin{figure}[htb!]
@@ -335,4 +342,11 @@ Brute force, check all numbers and their sum of divisors.
 	\end{figure}
 \end{prob}
 \begin{sol}
+Brute force, just use $O(\log n)$ time complexity to get the $n^{\mathrm{th}}$ Fibonacci number. Or better
+Since we know the $n^{th}$ is rounding following expression
+\begin{equation}
+F_n \sim \dfrac{1}{\sqrt{5}}(\phi^n)\ge 10^{999}
+\end{equation}
+then 
+$$n \ge \dfrac{\log(5)/2 + 999 \log 10}{\log \phi} \sim 4781.8$$
 \end{sol}
