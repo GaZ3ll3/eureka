@@ -3,6 +3,17 @@ Eureka
 
 This repo stores 001 - 500+ source code for Euler project, including recent problems.
 
+
+### How to use:
+
+compile twice.
+
+```
+pdflatex main.tex 
+pdflatex main.tex
+
+```
+
 Purpose: 
 
 - practice coding speed without IDE.(using nano.)
