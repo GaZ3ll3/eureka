@@ -45,46 +45,89 @@ Brute force. But we know $b$ is a prime number between $0$ to $999$. Also we can
 		\end{center}
 	\end{figure}
 \end{prob}
-
 \begin{sol}
+Deducing the formula directly may take time. We can prove that on each layer, the increment is linear to $n$, that means each layer has a sum as quadratic polynomial in $n$.
+ That means the formula will take form as a cubic polynomial $f(n)$ in $n$, with $f(1) = 1, f(3) = 25, f(5) = 101, f(7) = 261$.
 
+\begin{equation}
+\begin{pmatrix}
+1 & 1 & 1 & 1\\
+81 & 27 & 3 & 1\\
+125 & 25 & 5 & 1\\
+343 & 49 & 7 & 1 
+\end{pmatrix} 
+\begin{pmatrix}
+a\\b\\c\\d
+\end{pmatrix}
+ = \begin{pmatrix}
+1\\25\\101\\261
+\end{pmatrix}
+\end{equation}
+gives 
+$f(n) = \dfrac{1}{6}(4 n^3 + 3n^2 + 8 n - 9)$
 \end{sol}
 
-\section{Problem 029}
+\section{Problem 029 - Distinct powers}
 \begin{prob}
 	\begin{figure}[htb!]
 		\begin{center}
-			\includegraphics[scale = 0.4]{pic/026.png}
+			\includegraphics[scale = 0.4]{pic/029.png}
 		\end{center}
 	\end{figure}
 \end{prob}
+\begin{sol}
+Brute force with \texttt{Python} one liner!
+\code{code/029.py} 
+\end{sol}
 
-\section{Problem 030}
+\section{Problem 030 - Digit fifth powers}
 \begin{prob}
 	\begin{figure}[htb!]
 		\begin{center}
-			\includegraphics[scale = 0.4]{pic/026.png}
+			\includegraphics[scale = 0.4]{pic/030.png}
 		\end{center}
 	\end{figure}
 \end{prob}
+\begin{sol}
+Brute force, since the largest number will not exceed $5 \cdot 9 ^5$.
+\code{code/030.py}
+\end{sol}
 
 \section{Problem 031}
 \begin{prob}
 	\begin{figure}[htb!]
 		\begin{center}
-			\includegraphics[scale = 0.4]{pic/026.png}
+			\includegraphics[scale = 0.4]{pic/031.png}
 		\end{center}
 	\end{figure}
 \end{prob}
 
-\section{Problem 032}
+\begin{sol}
+Consider the generating function 
+$$\dfrac{1}{ (1 - x)(1 - x^2)(1 - x^5)(1 - x^{10})(1 - x^{20})(1 - x^{50})(1 - x^{100})(1 - x^{200})}$$
+We simply need to find out the coefficient of $x^{200}$. To avoid long division, we can use 
+$$\dfrac{1 - x ^ {201}}{1 - x} \dfrac{1 - x ^ {202}}{1 - x^2} \dfrac{1 - x^{205}}{1 - x^5} \dfrac{1 - x ^ {210}}{1 - x ^{10}}\dfrac{1 - x^{220}}{1 - x^{20}}\dfrac{1 - x^{250}}{1 - x^{50}} \dfrac{1 - x^{300}}{1 - x^{100}}\dfrac{1 - x^{400}}{1 - x^{200}}$$
+instead, that will simply require multiplication of polynomials.
+\vspace{1cm}
+\code{code/031.py}
+\end{sol}
+\section{Problem 032 - Pandigital products}
 \begin{prob}
 	\begin{figure}[htb!]
 		\begin{center}
-			\includegraphics[scale = 0.4]{pic/026.png}
+			\includegraphics[scale = 0.4]{pic/032.png}
 		\end{center}
 	\end{figure}
 \end{prob}
+\begin{sol}
+It is easy to show there are only two possible cases:
+\begin{eqnarray}
+\overline{a} \times \overline{bcde} = \overline{fghi}\\
+\overline{ab}\times \overline{cde} = \overline{fghi}
+\end{eqnarray}
+For the first case, there are $630$ choices at most. For the second, there are $1260$ combinations.
+\code{code/032.py}
+\end{sol}
 
 \section{Problem 033}
 \begin{prob}
