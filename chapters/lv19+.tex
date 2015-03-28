@@ -20,13 +20,53 @@ Then we just have to evaluate
 \begin{eqnarray}
 \sum_{k = 1}^n ((1 - k^2)^{n + 1} - (1 - k^2))/(- k^2) \mod p
 \end{eqnarray}
-where 
+where using \texttt{Little Fermat's Theorem},
 \begin{eqnarray}
 (-k^2)^{-1} \equiv (-k^2)^{p-2} \mod{p}
 \end{eqnarray}
 Using \texttt{ModPow} with \texttt{BigInt} will be efficient, in \texttt{Python}, simply use \texttt{pow} with the third argument.
 \code{code/479.py}
 \end{sol}
-\section{Problem 500}
+\section{Problem 485}
 \begin{prob}
+	\begin{figure}[htb!]
+		\begin{center}
+			\includegraphics[scale = 0.4]{pic/485.png}
+		\end{center}
+	\end{figure}
 \end{prob}
+\begin{sol}
+Consider the problem size, $n = 10^8$, which means storing $d(n)$ for $n \le 10^8$ will not take too much memory($\sim 0.8$ Gb). 
+\end{sol}
+
+\section{Problem 487 - Sums of power sums}
+\begin{prob}
+	\begin{figure}[htb!]
+		\begin{center}
+			\includegraphics[scale = 0.4]{pic/487.png}
+		\end{center}
+	\end{figure}
+\end{prob}
+\begin{sol}
+Use \texttt{Little Fermat's Theorem}, the problem size could \textit{dramatically} be reduced.
+\end{sol}
+
+\section{Problem 488}
+\section{Problem 491}
+\section{Problem 493}
+\section{Problem 498}
+\section{Problem 499 - St.Petersburg Lottery}
+\begin{prob}
+	\begin{figure}[htb!]
+		\begin{center}
+			\includegraphics[scale = 0.4]{pic/499.png}
+		\end{center}
+	\end{figure}
+\end{prob}
+\begin{sol}
+	
+\end{sol}
+\section{Problem 500}
+\section{Problem 501}
+\section{Problem 504}
+\section{Problem 506}
